@@ -1,6 +1,32 @@
+import { BsDot } from "react-icons/bs";
+
 const Home = () => {
+  const Dot = () => (
+    <p className="w-[1rem] h-[1rem] bg-[#eb7e2a] rounded-full opacity-50">
+      <BsDot />
+    </p>
+  );
+
   return (
     <>
+      <div className="absolute grid grid-cols-6 gap-1 top-[20%] -right-1">
+        {Array(30)
+          .fill(null)
+          .map((_, index) => (
+            <div key={index}>
+              <Dot />
+            </div>
+          ))}
+      </div>
+      <div className="absolute bottom-0 grid grid-cols-12 gap-1 -left-2 ">
+        {Array(72)
+          .fill(null)
+          .map((_, index) => (
+            <div key={index}>
+              <Dot />
+            </div>
+          ))}
+      </div>
       <div className="relative flex items-center justify-between w-full px-20">
         <div className="absolute inset-0 bg-[#000] blur z-[-1] opacity-[.7] motion-safe:animate-pulse"></div>
         <div className="w-full space-y-6">
@@ -8,7 +34,7 @@ const Home = () => {
             take your chess game to the next level
           </h2>
           <p>
-            Connect with top ranked chess players from around the world and
+            Connect with top-ranked chess players from around the world and
             learn the secrets to becoming a chess master
           </p>
           <button className="px-4 py-2 capitalize border shadow-2xl rounded-2xl shadow-[#888]">

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { header, subMenu } from "../Data";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [showSubmenu, setShowSubMenu] = useState(false);
+  const [hoveredMenuItemIndex, setHoveredMenuItemIndex] = useState(null);
 
   return (
     <>
@@ -14,23 +16,38 @@ const Header = () => {
           {header.map((items, index) => (
             <React.Fragment key={index}>
               <p
-                className="hover:font-[800] hover:underline decoration-double"
-                onClick={() => {
+                className={`hover:font-[800] relative ${
+                  hoveredMenuItemIndex === index ? "" : ""
+                }`}
+                onMouseEnter={() => {
                   if (items.menu === "Account") {
-                    setShowSubMenu(!showSubmenu);
+                    setShowSubMenu(true);
                   }
+                  setHoveredMenuItemIndex(index);
+                }}
+                onMouseLeave={() => {
+                  if (items.menu === "Account") {
+                    setShowSubMenu(false);
+                  }
+                  setHoveredMenuItemIndex(null);
                 }}
               >
-                {items.menu}
+                <a href={items.path}>
+                  <>{items.menu}</>
+                </a>
+                {hoveredMenuItemIndex === index && (
+                  <div className="bottom-0 flex flex-col gap-1">
+                    <div className="w-full h-[.2rem] bg-[#AC8D75]"></div>
+                    <div className="w-1/2 h-[.2rem] bg-[#AC8D75]"></div>
+                  </div>
+                )}
               </p>
             </React.Fragment>
           ))}
         </div>
       </div>
       {showSubmenu && (
-        <div
-          className="absolute right-[4.5rem] top-[4rem] flex flex-col"
-        >
+        <div className="absolute right-[4.5rem] top-[4rem] flex flex-col">
           {subMenu.map((submenuItem, subIndex) => (
             <React.Fragment key={subIndex}>
               <p>{submenuItem.menu}</p>

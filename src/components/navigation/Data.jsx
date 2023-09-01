@@ -1,21 +1,27 @@
 export const header = [
   {
     menu: "Home",
+    path: "/"
   },
   {
     menu: "Play",
+    path: "/play"
   },
   {
     menu: "Learn",
+    path: "/"
   },
   {
     menu: "Watch",
+    path: "/"
   },
   {
     menu: "News",
+    path: "/"
   },
   {
-    menu: "Account"
+    menu: "Account",
+    path: "/"
   }
 ];
 
