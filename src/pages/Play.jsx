@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaPlus } from "react-icons/fa";
+import { FaInfo, FaPlus } from "react-icons/fa";
 import { GiEmptyChessboard, GiTabletopPlayers } from "react-icons/gi";
 import { SiHandshake } from "react-icons/si";
 import { TbTournament } from "react-icons/tb";
+import { MdLogout, MdRestartAlt } from "react-icons/md";
+import { BiMessageSquareDetail } from "react-icons/bi";
+import { ImExit } from "react-icons/im";
 
 const Play = () => {
   const [selectedPiece, setSelectedPiece] = useState(null);
@@ -24,6 +27,7 @@ const Play = () => {
     ["♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙"],
     ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"],
   ];
+
   const flattenedChessIcons = initialChessboard.flat();
   const [chessIcons, setChessIcons] = useState(flattenedChessIcons);
   const switchPlayers = () => {
@@ -101,18 +105,61 @@ const Play = () => {
 
   useEffect(() => {
     randomUsers();
-  }, []);
+  }, [activeLink]);
+
+  const gameSideMenu = [
+    {
+      menu: "New Game",
+      icon: <FaPlus />,
+    },
+    {
+      menu: "Restart",
+      icon: <MdRestartAlt />,
+    },
+    {
+      menu: "Players",
+      icon: <GiTabletopPlayers />,
+    },
+    {
+      menu: "About",
+      icon: <FaInfo />,
+    },
+    {
+      menu: "Message",
+      icon: <BiMessageSquareDetail />,
+    },
+
+    {
+      menu: "Logout",
+      icon: <MdLogout />,
+    },
+    {
+      menu: "Exit",
+      icon: <ImExit />,
+    },
+  ];
 
   return (
     <div className="flex justify-between py-12">
-        <div className="w-[10%]">
-            
+      <div className="w-[10%]">
+        <div className="flex flex-col w-full h-full justify-evenly">
+          {gameSideMenu.map((menu, index) => (
+            <div className="flex flex-col items-center gap-2" key={index}>
+              <p className="text-[1.5rem]">{menu.icon}</p>
+              <p>{menu.menu}</p>
+            </div>
+          ))}
         </div>
+      </div>
       <div className="flex flex-col items-center justify-between w-1/2 py-5">
         <div className="flex items-start justify-between px-4 py-2 mb-4 text-white rounded-lg space-x-[3rem] w-[32rem]">
           <div className="flex items-center">
             <div className="flex items-center justify-center w-12 h-12 border rounded-full">
-              O
+              <img
+                src="https://picsum.photos/50/50"
+                className="w-full rounded-full"
+                alt=""
+              />
             </div>
             <span className="ml-3 text-lg font-semibold">Opponent</span>
           </div>
@@ -152,7 +199,11 @@ const Play = () => {
         <div className="flex items-start justify-between px-4 py-2 mt-3 mb-4 space-x-[3rem] text-white  rounded-lg w-[32rem]">
           <div className="flex items-center">
             <div className="flex items-center justify-center w-12 h-12 border rounded-full">
-              Y
+              <img
+                src="https://picsum.photos/50/51"
+                className="w-full rounded-full"
+                alt=""
+              />
             </div>
             <span className="ml-3 text-lg font-semibold">You</span>
           </div>
@@ -326,10 +377,13 @@ const Play = () => {
               <p>Status</p>
             </div>
             {peopleOnline.map((user, index) => (
-              <div key={index} className="flex items-center py-1 justify-evenly">
-                <p className="w-full">{index + 1}</p>
-                <p className="w-full">{`${user.name.first}`}</p>
-                <p className="w-full">{user.dob.age}</p>
+              <div
+                key={index}
+                className="flex items-center py-1 justify-evenly"
+              >
+                <p className="w-1/3">{index + 1}</p>
+                <p className="flex justify-center w-full">{`${user.name.first}`}</p>
+                <p className="flex w-full px-8">{user.dob.age}</p>
                 <p
                   className={`w-[.51rem] h-[.51rem]  rounded-full p-1 mr-4 ${
                     user.dob.age > 40 ? "bg-[green] animate-pulse" : "bg-[red]"

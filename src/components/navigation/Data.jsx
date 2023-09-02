@@ -8,16 +8,16 @@ export const header = [
     path: "/play"
   },
   {
-    menu: "Learn",
-    path: "/"
+    menu: "Leaderboard",
+    path: "/leaderboard"
   },
   {
-    menu: "Watch",
-    path: "/"
+    menu: "Watch & Learn",
+    path: "/watch-and-learn"
   },
   {
-    menu: "News",
-    path: "/"
+    menu: "Puzzles",
+    path: "/puzzles"
   },
   {
     menu: "Account",
