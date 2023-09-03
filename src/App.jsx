@@ -12,9 +12,7 @@ function App() {
       <div className="shadow-[#252525] shadow-2xl w-[4rem]  h-[4rem] absolute rounded-full bg-[#AC8D75] left-10 top-[50%] z-[999]"></div>
       <div className="flex flex-col justify-between min-h-screen z-[99] relative bg-hero bg-center bg-no-repeat bg-cover rounded-xl overflow-hidden">
         <Header />
-        <BrowserRouter>
           <Routing />
-        </BrowserRouter>
         <Footer />
       </div>
     </main>

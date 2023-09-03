@@ -15,7 +15,8 @@ const Header = () => {
         <div className="flex w-full justify-evenly">
           {header.map((items, index) => (
             <React.Fragment key={index}>
-              <p
+              <Link
+                to={items.path}
                 className={`hover:font-[800] relative ${
                   hoveredMenuItemIndex === index ? "" : ""
                 }`}
@@ -32,16 +33,14 @@ const Header = () => {
                   setHoveredMenuItemIndex(null);
                 }}
               >
-                <a href={items.path}>
-                  <>{items.menu}</>
-                </a>
+                {items.menu}
                 {hoveredMenuItemIndex === index && (
                   <div className="bottom-0 flex flex-col gap-1">
                     <div className="w-full h-[.2rem] bg-[#AC8D75]"></div>
                     <div className="w-1/2 h-[.2rem] bg-[#AC8D75]"></div>
                   </div>
                 )}
-              </p>
+              </Link>
             </React.Fragment>
           ))}
         </div>
