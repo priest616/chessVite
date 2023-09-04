@@ -21,16 +21,18 @@ export const header = [
   },
   {
     menu: "Account",
-    path: "/"
+    path: "#"
   }
 ];
 
 export const subMenu = [
   {
     menu: "Sign In",
+    path: "sign-in"
   },
   {
-    menu: "Sign Up"
+    menu: "Sign Up",
+    path: "sign-up"
   }
 ]
 

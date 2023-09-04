@@ -5,7 +5,6 @@ const Puzzles = () => {
   const [puzzleData, setPuzzleData] = useState(null);
   const [activePuzzle, setActivePuzzle] = useState(0); // Initialize as 0
   const [apiURL, setApiURL] = useState("");
-  console.log(typeof apiURL);
 
   useEffect(() => {
     const fetchPuzzle = async () => {
@@ -51,12 +50,12 @@ const Puzzles = () => {
         ))}
       </div>
       {puzzleData ? (
-        <div className="flex flex-col items-center space-y-5">
-          <h4>{puzzleData.title}</h4>
+        <div className="flex flex-col items-center my-10 space-y-5">
+          <p className="font-[900] font-[Capriola]  text-xl md:text-2xl lg:text-4xl xl:text-6xl">{puzzleData.title}</p>
           <img src={puzzleData.image} alt="Puzzle" />
         </div>
       ) : (
-        <p>Loading puzzle...</p>
+       puzzleData  && ( <p>Loading puzzle...</p>)
       )}
     </div>
   );

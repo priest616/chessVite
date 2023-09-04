@@ -7,6 +7,7 @@ import { TbTournament } from "react-icons/tb";
 import { MdLogout, MdRestartAlt } from "react-icons/md";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { ImExit } from "react-icons/im";
+import { BsDot } from "react-icons/bs";
 
 const Play = () => {
   const [selectedPiece, setSelectedPiece] = useState(null);
@@ -89,8 +90,8 @@ const Play = () => {
 
   const games = [
     {
-      gamesNow: 665558,
-      gamesToday: 10587446,
+      gamesNow: 668,
+      gamesToday: 1056,
     },
   ];
 
@@ -140,21 +141,23 @@ const Play = () => {
   ];
 
   return (
-    <div className="flex justify-between py-12">
-      <div className="w-[10%]">
-        <div className="flex flex-col w-full h-full justify-evenly">
+    <div className="flex flex-col justify-between py-12 space-y-8 lg:flex-row">
+      <div className="lg:w-[10%]">
+        <div className="flex flex-wrap w-full h-full lg:flex-col justify-evenly">
           {gameSideMenu.map((menu, index) => (
-            <div className="flex flex-col items-center gap-2" key={index}>
+            <div className="flex flex-col items-center gap-2 mx-2 my-2" key={index}>
               <p className="text-[1.5rem]">{menu.icon}</p>
               <p>{menu.menu}</p>
             </div>
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center justify-between w-1/2 py-5">
-        <div className="flex items-start justify-between px-4 py-2 mb-4 text-white rounded-lg space-x-[3rem] w-[32rem]">
-          <div className="flex items-center">
-            <div className="flex items-center justify-center w-12 h-12 border rounded-full">
+
+      
+      <div className="flex flex-col items-center justify-between py-5 lg:w-1/2">
+        <div className="flex lg:items-start justify-between px-4 py-2 mb-4 text-white rounded-lg lg:space-x-[3rem] lg:w-full w-full sm:w-3/4 gap-6 items-center">
+          <div className="flex flex-col items-center lg:flex-row ">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full lg:w-12 lg:h-12">
               <img
                 src="https://picsum.photos/50/50"
                 className="w-full rounded-full"
@@ -163,16 +166,16 @@ const Play = () => {
             </div>
             <span className="ml-3 text-lg font-semibold">Opponent</span>
           </div>
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-center lg:items-start">
             <span className="text-sm">Score:</span>
             <span className="text-xl font-bold">{playerScores[0]}</span>
           </div>
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-center lg:items-start">
             <span className="text-sm">Time Remaining:</span>
             <span className="text-xl font-bold">{countdownTime} sec</span>
           </div>
         </div>
-        <table className="border border-gray-300 rounded-md">
+        <table className="border-gray-300 rounded-md">
           <tbody>
             {[...Array(8)].map((_, row) => (
               <tr key={row}>
@@ -196,9 +199,9 @@ const Play = () => {
             ))}
           </tbody>
         </table>
-        <div className="flex items-start justify-between px-4 py-2 mt-3 mb-4 space-x-[3rem] text-white  rounded-lg w-[32rem]">
-          <div className="flex items-center">
-            <div className="flex items-center justify-center w-12 h-12 border rounded-full">
+        <div className="flex lg:items-start justify-between px-4 py-2 mb-4 text-white rounded-lg lg:space-x-[3rem] lg:w-full w-full sm:w-3/4 gap-6 items-center">
+        <div className="flex flex-col items-center lg:flex-row ">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full lg:w-12 lg:h-12">
               <img
                 src="https://picsum.photos/50/51"
                 className="w-full rounded-full"
@@ -217,7 +220,9 @@ const Play = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-1/3 mx-5">
+
+      
+      <div className="flex flex-col w-3/4 mx-auto lg:mx-5 lg:w-1/3">
         <div className="flex  bg-[#111] justify-between rounded-md shadow-md  my-3">
           {menu.map((menu, index) => {
             return (
@@ -348,15 +353,15 @@ const Play = () => {
                       key={index}
                       className="flex items-center text-xl text-white justify-evenly"
                     >
-                      <div>
+                      <div className="flex">
                         {gamesplayed.gamesNow}{" "}
-                        <span className="italic text-gray-300">
-                          Playing Now
+                        <span className="flex items-center text-sm italic text-gray-300">
+                     <BsDot className=" text-[green] text-[1.5rem] animate-pulse"/>     Playing Now
                         </span>
                       </div>
                       <div>
                         {gamesplayed.gamesToday}{" "}
-                        <span className="italic text-gray-300">
+                        <span className="text-sm italic text-gray-300">
                           Games Today
                         </span>
                       </div>
