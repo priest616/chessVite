@@ -142,7 +142,7 @@ const Play = () => {
 
   return (
     <div className="flex flex-col justify-between py-12 space-y-8 lg:flex-row">
-      <div className="lg:w-[10%]">
+      <div className="lg:w-[10%] px-4 lg:px-0">
         <div className="flex flex-wrap w-full h-full lg:flex-col justify-evenly">
           {gameSideMenu.map((menu, index) => (
             <div className="flex flex-col items-center gap-2 mx-2 my-2" key={index}>
