@@ -21,7 +21,7 @@ const ChessMatch = () => {
 
   return (
     <div className="container mx-auto mt-8">
-      <h1 className="mb-4 text-2xl font-semibold">Chess.com Match</h1>
+      <h1 className="mb-4 text-2xl font-semibold">Match</h1>
       <div className="mb-4">
         <h2 className="text-lg font-semibold">Match Details</h2>
         <ul>

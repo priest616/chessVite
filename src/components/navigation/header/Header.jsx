@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { header, subMenu } from "../Data";
 import { Link } from "react-router-dom";
 import { CgMenuRight } from "react-icons/cg";
-import Zoom from "react-reveal/Zoom";
 
 const Header = () => {
   const [showSubmenu, setShowSubMenu] = useState(false);
@@ -11,7 +10,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-between px-3 py-6 rounded lg:flex-row lg:items-center">
+      <div className="flex flex-col justify-between px-3 rounded shadow-2xl shadow-[#222] lg:flex-row lg:items-center">
         <div className="flex items-center justify-between ">
           <img src="https://picsum.photos/50/30" className="rounded" alt="" />
           <div className="flex lg:hidden text-[2rem]">
@@ -19,7 +18,7 @@ const Header = () => {
           </div>
         </div>
         <div className="my-4 rounded lg:bg-inherit lg:w-2/3">
-          <Zoom>
+          <>
             <div
               className={`flex flex-col items-end w-full lg:flex lg:justify-evenly lg:flex-row ${
                 mobileMenu ? "block" : "hidden"
@@ -47,7 +46,7 @@ const Header = () => {
                     <div className="flex flex-col items-center">
                       {items.menu}
                       {items.menu === "Account" && (
-                        <div className="mt-5">
+                        <div className="mt-5 lg:hidden">
                           {subMenu.map((submenuItem, subIndex) => (
                             <React.Fragment key={subIndex}>
                               <Link to={submenuItem.path}>
@@ -94,7 +93,7 @@ const Header = () => {
                 </React.Fragment>
               ))}
             </div>
-          </Zoom>
+          </>
         </div>
       </div>
     </>

@@ -33,8 +33,8 @@ function Leaderboard() {
   return (
     <div className="mx-auto mt-8">
         <div className="absolute inset-0 bg-black opacity-[.7] -z-10"></div>
-      <h1 className="mb-4 text-2xl font-semibold">Chess.com Leaderboard</h1>
-      {leaderboardData.daily && (
+      <h1 className="mb-4 text-2xl font-semibold"> Leaderboard</h1>
+      {leaderboardData.daily ? (
         <div className="mb-4">
           <h2 className="text-lg font-semibold">Daily Leaderboard</h2>
           <table className="min-w-full divide-y divide-gray-200">
@@ -71,7 +71,7 @@ function Leaderboard() {
             </div>
           )}
         </div>
-      )}
+      ): (<div className="animate-pulse">Loading the Leaderboard...</div>)}
     </div>
   );
 }

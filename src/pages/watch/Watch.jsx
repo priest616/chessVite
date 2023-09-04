@@ -58,7 +58,7 @@ const Watch = () => {
   return (
     <div className="container mx-auto mt-8">
       <div className="absolute inset-0 bg-black opacity-[.7] -z-[1]"></div>
-      <div className="flex justify-around mb-4">
+      <div className="flex justify-center mb-4 space-x-5">
         {watchOptions.map((option, index) => (
           <button
             key={index}
@@ -107,7 +107,7 @@ const Watch = () => {
                         href={item.url}
                         className="flex items-center gap-4 overflow-hidden"
                       >
-                        Profile URL <ImArrowUpRight className="text-xs" />
+                        Visit Profile<ImArrowUpRight className="text-xs" />
                       </a>
                     </div>
                     <div className="flex items-center col-span-1 p-2">

@@ -9,12 +9,12 @@ const Home = () => {
 
   return (
     <>
-      <div className="absolute lg:grid grid-cols-6 gap-1 top-[20%] -right-1 hidden ">
+      <div className="absolute lg:grid grid-cols-6 gap-1 top-[20%] -right-1 hidden">
         {Array(30)
           .fill(null)
           .map((_, index) => (
-            <div key={index}>
-              <Dot />
+            <div key={index} className="bg-[#c99c3e] rounded-full h-[1rem] w-[1rem]">
+              
             </div>
           ))}
       </div>
@@ -22,8 +22,8 @@ const Home = () => {
         {Array(72)
           .fill(null)
           .map((_, index) => (
-            <div key={index}>
-              <Dot />
+            <div key={index} className="bg-[#c99c3e] rounded-full h-[1rem] w-[1rem]">
+              
             </div>
           ))}
       </div>

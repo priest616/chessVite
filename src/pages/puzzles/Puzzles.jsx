@@ -51,7 +51,7 @@ const Puzzles = () => {
       </div>
       {puzzleData ? (
         <div className="flex flex-col items-center my-10 space-y-5">
-          <p className="font-[900] font-[Capriola]  text-xl md:text-2xl lg:text-4xl xl:text-6xl">{puzzleData.title}</p>
+          <p className="font-[900] font-[Capriola]  text-xl md:text-2xl lg:text-3xl xl:text-4xl">{puzzleData.title}</p>
           <img src={puzzleData.image} alt="Puzzle" />
         </div>
       ) : (
