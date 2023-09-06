@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 const SignIn = () => {
   return (
     <>
-      <div className="flex p-10">
-        <div className='absolute inset-0 bg-black -z-[1] opacity-30'></div>
-        <div className="w-full space-y-6">
+      <div className="flex p-10 mx-auto shadow-[#333] shadow-2xl rounded-xl">
+        
+        <div className='absolute inset-0 bg-black -z-[1] opacity-[.8]'></div>
+        <div className="w-full max-w-lg space-y-6">
           <p className="text-3xl text-center lg:text-4xl ">Create an account</p>
           <p className="text-center">
             Let's get started to create your account
           </p>
-          <form action="post" className="flex flex-col px-8 space-y-6">
+          <form action="post" className="flex flex-col px-8 space-y-3">
             <label htmlFor="name">Name</label>
             <input
               type="email"

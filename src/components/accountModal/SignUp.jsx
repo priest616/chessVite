@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const SignUp = () => {
   return (
     <>
-      <div className="flex p-10">
-        <div className='absolute inset-0 bg-black -z-[1] opacity-30'></div>
+      <div className="flex p-10 mx-auto shadow-2xl shadow-[#333] rounded-md gap-6">
+        <div className='absolute inset-0 bg-black -z-[1] opacity-[.8]'></div>
         <div className="w-full ">
           <p className="text-3xl text-center lg:text-4xl ">Create an account</p>
           <p className="text-center">
@@ -61,8 +61,8 @@ const SignUp = () => {
             
           </form>
         </div>
-        <div className="relative hidden w-full rounded lg:flex">
-          <img src="https://cdn2.iconfinder.com/data/icons/3d-chess/512/pawn.png" alt="" className="rounded z-[999]"/>
+        <div className="relative hidden w-full rounded lg:flex ">
+          <img src="https://cdn2.iconfinder.com/data/icons/3d-chess/512/queen.png" alt="" className="rounded z-[999]"/>
         </div>
       </div>
     </>
