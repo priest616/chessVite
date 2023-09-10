@@ -15,7 +15,7 @@ const PuzzleSettings = () => {
             icon: 'https://picsum.photos/80/80',
             description: 'Race against the clock. 3 strikes and you are out'
         },
-        {
+        {  
             id: 3,
             title: 'Puzzle Battle',
             icon: 'https://picsum.photos/80/80',
